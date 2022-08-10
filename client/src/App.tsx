@@ -1,13 +1,11 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h4>Hi there! One day this header might be dynamic.</h4>
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1>Hi there! One day this header might be dynamic.</h1>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
