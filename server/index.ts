@@ -16,6 +16,8 @@ app.get('/greeting', (req: Request, res: Response) => {
   console.log(req.query.name);
   if (req.query.name) {
     res.send(`Hello, ${req.query.name}! Have a great day!`);
+  } else {
+    res.send('Hello, please enter your name for a custom greeting!');
   }
 });
 
