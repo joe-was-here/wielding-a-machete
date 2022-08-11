@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./App.css";
 
-function App() {
+const App = () => {
+  const [greeting, setGreeting] = useState("");
+
+  useEffect(() => {
+    console.log("App rendered");
+    axios.get("/api/hello").then((res) => {
+      console.log(res.data);
+      setGreeting(res.data);
+    });
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hi there! One day this header might be dynamic.</h1>
+        <h1>{greeting}</h1>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -20,6 +31,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
