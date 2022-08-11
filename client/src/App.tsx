@@ -7,7 +7,7 @@ const App = () => {
 
   useEffect(() => {
     console.log("App rendered");
-    axios.get("/api/hello").then((res) => {
+    axios.get("http://localhost:5555/greeting").then((res) => {
       console.log(res.data);
       setGreeting(res.data);
     });
